@@ -1,4 +1,4 @@
-# cloud-functions
+# Cloud functions
 The project includes two types of cloud functions: onRequest and onSchedule. These functions enable you to perform various tasks within your Firebase project, such as handling HTTP requests and executing periodic tasks.
 
 Project Overview
