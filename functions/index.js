@@ -19,6 +19,13 @@ const db = admin.firestore();
 
 const express = require("express");
 const cors = require("cors");
+const {
+  CreatePost,
+  GetAllPosts,
+  GetSinglePost,
+  UpdatePost,
+  DeletePost,
+} = require("./controllers/post");
 
 const app = express();
 app.use(cors({ origin: true }));
@@ -121,6 +128,16 @@ app.delete("/api/delete/:id", (req, res) => {
 });
 
 exports.app = onRequest(runtimeOpts, app);
+
+exports.createPost = onRequest(runtimeOpts, CreatePost);
+
+exports.getAllPosts = onRequest(runtimeOpts, GetAllPosts);
+
+exports.getSinglePost = onRequest(runtimeOpts, GetSinglePost);
+
+exports.updatePost = onRequest(runtimeOpts, UpdatePost);
+
+exports.deletePost = onRequest(runtimeOpts, DeletePost);
 
 exports.scheduledFunction = onSchedule(
   {
